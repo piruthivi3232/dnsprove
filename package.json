@@ -1,11 +1,11 @@
 {
-  "name": "@govtechsg/dnsprove",
+  "name": "@tradetrust/dnsprove",
   "version": "0.0.0-development",
   "description": "Helper utility for retrieving OpenAttestations document store address records from DNS",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Open-Attestation/dnsprove.git"
+    "url": "git+https://github.com/TradeTrust/dnsprove.git"
   },
   "main": "dist/index.js",
   "author": {
