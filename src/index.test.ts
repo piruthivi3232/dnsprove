@@ -256,7 +256,6 @@ describe("queryDns", () => {
   });
 });
 
-
 describe("getDocumentStoreRecords for Hedera", () => {
   const sampleDnsTextRecord = {
     type: "openatts",
@@ -270,5 +269,4 @@ describe("getDocumentStoreRecords for Hedera", () => {
     const records = await getDocumentStoreRecords("trustlv.org");
     expect(records).toStrictEqual([sampleDnsTextRecord]);
   });
-
 });

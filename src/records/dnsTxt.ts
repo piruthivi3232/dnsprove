@@ -2,7 +2,7 @@ import { Static, Boolean, String, Literal, Record, Union, Partial } from "runtyp
 
 export const RecordTypesT = Literal("openatts");
 
-//export const BlockchainNetworkT = Literal("ethereum");
+// export const BlockchainNetworkT = Literal("ethereum");
 export const BlockchainNetworkT = Union(Literal("ethereum"), Literal("hedera"));
 
 export const EthereumAddressT = String.withConstraint((maybeAddress: string) => {
@@ -12,7 +12,6 @@ export const EthereumAddressT = String.withConstraint((maybeAddress: string) => 
 export const HederaAccountIDT = String.withConstraint((maybeAddress: string) => {
   return /0x[a-fA-F0-9]{40}/.test(maybeAddress) || `${maybeAddress} is not a valid hedera address`;
 });
-
 
 export enum EthereumNetworks {
   homestead = "1",
@@ -24,17 +23,14 @@ export enum EthereumNetworks {
   polygonMumbai = "80001",
   local = "1337",
   xdc = "50",
-  xdcapothem = "51"
+  xdcapothem = "51",
 }
 
 export enum HederaNetworks {
   mainnet = "295",
-  testnet = "296"
+  testnet = "296",
 }
-export const HederaNetworkIdT = Union(
-  Literal(HederaNetworks.mainnet),
-  Literal(HederaNetworks.testnet)
-);
+export const HederaNetworkIdT = Union(Literal(HederaNetworks.mainnet), Literal(HederaNetworks.testnet));
 
 export const EthereumNetworkIdT = Union(
   Literal(EthereumNetworks.homestead),
@@ -63,7 +59,6 @@ export const OpenAttestationDNSTextRecordT = Union(
     addr: HederaAccountIDT,
   }).And(Partial({ dnssec: Boolean }))
 );
-
 
 export type BlockchainNetwork = Static<typeof BlockchainNetworkT>;
 export type EthereumAddress = Static<typeof EthereumAddressT>;
